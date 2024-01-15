@@ -17,13 +17,14 @@ import { createPost } from "@/lib/appwrite/api"
 
 type PostFormProps = {
   post?: Models.Document;
+  action: 'Create' | 'Update';
 }
 
-const PostForm = ({ post }: PostFormProps) => {
+const PostForm = ({ post, action }: PostFormProps) => {
   const navigate = useNavigate();
-  const { toast } = useToast();
   const { user } = useUserContext();
-  // const { mutateAsync: createPost, isLoading: isLoadingCreate } = useCreatePost();
+  const { toast } = useToast();
+  const { mutateAsync: createPost, isLoading: isLoadingCreate } = useCreatePost();
 
   // 1. Define your form.
   const form = useForm<z.infer<typeof PostValidation>>({
@@ -136,3 +137,4 @@ const PostForm = ({ post }: PostFormProps) => {
 }
 
 export default PostForm
+4:38:02
