@@ -13,7 +13,7 @@ import { Models } from "appwrite"
 import { useCreatePost, useUpdatePost } from "@/lib/react-query/queriesAndMutations"
 import { useUserContext } from "@/context/AuthContext"
 import { useToast } from "../ui/use-toast"
-import { createPost } from "@/lib/appwrite/api"
+// import { createPost } from "@/lib/appwrite/api"
 
 type PostFormProps = {
   post?: Models.Document;
