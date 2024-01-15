@@ -13,6 +13,7 @@ import { Models } from "appwrite"
 import { useCreatePost } from "@/lib/react-query/queriesAndMutations"
 import { useUserContext } from "@/context/AuthContext"
 import { useToast } from "../ui/use-toast"
+import { createPost } from "@/lib/appwrite/api"
 
 type PostFormProps = {
   post?: Models.Document;
@@ -31,7 +32,7 @@ const PostForm = ({ post }: PostFormProps) => {
       caption: post ? post?.caption : "",
       file: [],
       location: post ? post?.location : "",
-      tags: post ? post.tags.join(',') : ""
+      tags: post ? post.tags.join(',') : "",
     },
   })
 
